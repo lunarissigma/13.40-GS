@@ -39,6 +39,19 @@ public:
 	bool IsA(class UClass* TypeClass) const;
 	bool IsDefaultObject() const;
 
+	template <typename _Nt>
+	_Nt* Cast(UClass* _Cl) const
+	{
+		return IsA(_Cl) ? (_Nt*)this : nullptr;
+	}
+
+	template <typename _Nt>
+	_Nt* Cast() const
+	{
+		return Cast<_Nt>(_Nt::StaticClass());
+	}
+
+
 	void ExecuteUbergraph(int32 EntryPoint);
 
 public:

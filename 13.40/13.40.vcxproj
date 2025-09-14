@@ -143,10 +143,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\NetDriver\Public\NetDriver.h" />
+    <ClInclude Include="FortniteGame\Athena\Public\FortGameModeAthena.h" />
+    <ClInclude Include="FortniteGame\Athena\Public\FortPlayerControllerAthena.h" />
+    <ClInclude Include="FortniteGame\Athena\Public\FortPlaylistAthena.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Offsets.h" />
+    <ClInclude Include="Runtime.h" />
+    <ClInclude Include="SDK\PropertyFixup.hpp" />
+    <ClInclude Include="SDK\SDK.hpp" />
+    <ClInclude Include="SDK\UnrealContainers.hpp" />
+    <ClInclude Include="SDK\UtfN.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Engine\NetDriver\Private\NetDriver.cpp" />
+    <ClCompile Include="FortniteGame\Athena\Private\FortGameModeAthena.cpp" />
+    <ClCompile Include="FortniteGame\Athena\Private\FortPlayerControllerAthena.cpp" />
+    <ClCompile Include="FortniteGame\Athena\Private\FortPlaylistAthena.cpp" />
+    <ClCompile Include="SDK\SDK\Basic.cpp" />
+    <ClCompile Include="SDK\SDK\CoreUObject_functions.cpp" />
+    <ClCompile Include="SDK\SDK\Engine_functions.cpp" />
+    <ClCompile Include="SDK\SDK\FortniteGame_functions.cpp" />
+    <ClCompile Include="SDK\SDK\GameplayAbilities_functions.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SDK\NameCollisions.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

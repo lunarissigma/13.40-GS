@@ -36,7 +36,7 @@ namespace UC
 			return FMemoryFree(Ptr);
 		}
 
-		static void* Realloc(void* Ptr, uint64 Size, uint32 Alignment)
+		static void* Realloc(void* Ptr, uint64 Size, uint32 Alignment = 0x0)
 		{
 
             static void* (*FMemoryRealloc)(void* Ptr, uint64 Size, uint32 Alignment) = decltype(FMemoryRealloc)(uintptr_t(GetModuleHandle(0)) + 0x03230950); 		
@@ -346,6 +346,11 @@ namespace UC
 		inline bool IsValid() const { return Data && NumElements > 0 && MaxElements >= NumElements; }
 
 	public:
+		template <typename NT>
+		operator TArray<NT*>() {
+			return *(TArray<NT*>*)this;
+		}
+
 		inline       ArrayElementType& operator[](int32 Index)       { VerifyIndex(Index); return Data[Index]; }
 		inline const ArrayElementType& operator[](int32 Index) const { VerifyIndex(Index); return Data[Index]; }
 
